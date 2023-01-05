@@ -1,33 +1,35 @@
 <template>
-<div class="container">
-    <div id="choose_one">
+  <div class="container">
+    <div class="chooseOne">
+      <select name="cats" id="cats" v-model="whichCat" @change="alertWhich">
+        <option v-for="(cat, idx) in cats" :key="idx" :value="cat">
+          {{ cat }}
+        </option>
+      </select>
     </div>
-    <div id="img_block">
-        <div>   
-            <img src="../../public/cat-g48e877ff2_1920.jpg" width="400px" height="300px"> 
-        </div>
-        <div>
-            <img src="../../public/cat-g112b20ecf_1920.jpg" width="400px" height="300px"> 
-        </div>
-        <div>
-            <img src="../../public/cat-ge508fe22e_1920.jpg" width="400px" height="300px"> 
-        </div>
-        <div>
-            <img src="../../public/cat-gfe6b1406f_1920.jpg" width="400px" height="300px"> 
-        </div>
+    <div class="showCat">
+      <CatShow :whichCat="whichCat" />
     </div>
-</div>
+  </div>
 </template>
 
 <script>
+import CatShow from "./CatShowView.vue";
+
 export default {
-    data () {
-        return {
-
-        }
+  data() {
+    return {
+      whichCat: "cat3",
+      cats: ["cat1", "cat2", "cat3", "cat4"],
+    };
+  },
+  components: {
+    CatShow,
+  },
+  methods: {
+    alertWhich() {
+      console.log(this.whichCat);
     },
-    methods: {
-
-    }
-}
+  },
+};
 </script>
