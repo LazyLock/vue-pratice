@@ -10,9 +10,10 @@
       <b-navbar-nav>
         <b-nav-item>
           <router-link to="/toDoList">toDoList</router-link>
-
         </b-nav-item>
-        <b-nav-item>Link2</b-nav-item>
+        <b-nav-item>
+          <router-link to="/gallery">gallery</router-link>
+        </b-nav-item>
         <b-nav-item>Link3</b-nav-item>
         <b-nav-item>Link4</b-nav-item>
       </b-navbar-nav>
